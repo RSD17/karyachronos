@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart To Do & Routine Generator</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/imgs/kacy-32x32.png" sizes="32x32" type="image/png">
+    <script src="https://kit.fontawesome.com/cad18a28f3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="home-header">
+            <img id="home-logo" src="/imgs/kacy-logo.png" alt="Kacy Logo" width="100px">
+            <br>
+            <h1 id="home-heading">
+                <span class="heading-main" style="color: #5e2ee3;">KaryaChronos</span><br>
+                <span class="heading-accent" style="color: #eb6309">(Kacy)</span>
+            </h1>
+        </header>
+    <nav class="navbar">
+            <button class="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <a href="/html/dashboard.html">Dashboard</a>
+            <a href="/html/smarttodo.html" class="active-nav-link">Smart To-Do List</a>
+            <a href="/html/smarttodo.html#routine-generator">Routine Generator</a>
+            <a href="/html/examscheduler.html">Exam Prep Scheduler</a>
+            <div class="nav-dropdown">
+                <button class="dropbtn"> Profile 
+                    <i class="fa-solid fa-circle-user" style="margin: 0 5px;"></i>
+
+                    <i class="fa fa-caret-down" style="margin-left: 4px;"></i>
+                </button>
+                <div class="nav-dropdown-content">
+                    <a href="#" data-signout style="color: red;">Sign Out</a>
+                </div>
+            </div> 
+        </nav>
+        <br>
+    <h1>Smart To-Do List</h1>
+    <section class="todo-app">
+        <div class="todo-top">
+            <div class="progress-wrap">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                    <div><strong>Progress:</strong> <span id="progress-percent">0%</span></div>
+                </div>
+                <div class="progress-bar"><div id="progress-fill"></div></div>
+            </div>
+            <button id="openAddTask" class="add-task-btn">+ Add Task</button>
+        </div>
+
+        <div class="todo-board">
+            <div class="todo-column high">
+                <h2>High</h2>
+                <div class="tasks-list" id="high-list"></div>
+            </div>
+            <div class="todo-column medium">
+                <h2>Medium</h2>
+                <div class="tasks-list" id="medium-list"></div>
+            </div>
+            <div class="todo-column low">
+                <h2>Low</h2>
+                <div class="tasks-list" id="low-list"></div>
+            </div>
+        </div>
+
+        <!-- Completed section -->
+        <section id="completed-section" style="margin-top:20px;">
+            <h1 style="display:flex;justify-content:space-between;align-items:center">Completed <button id="toggleCompleted" style="border:none;background:transparent;cursor:pointer;font-size:18px">▼</button></h1>
+            <div id="completed-list" style="display:block;margin-top:10px;">
+            </div>
+        </section>
+    </section>
+
+    <!-- Task modal -->
+    <div id="task-modal" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header">
+                <h3 id="modalTitle">Add Task</h3>
+                <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <form id="task-form">
+                <div class="modal-body">
+                    <div class="modal-row">
+                        <label>Task Name<input type="text" id="task-name" required></label>
+                    </div>
+                    <div class="modal-row">
+                        <label>Deadline<input type="datetime-local" id="task-deadline" required></label>
+                    </div>
+                    <div class="modal-row">
+                        <label>Estimated Duration (hrs)<input type="number" id="task-duration" min="0.1" step="0.1" required></label>
+                        <label>Difficulty (1-5)
+                            <select id="task-difficulty" required>
+                                <option value="" disabled selected>Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="modal-row">
+                        <label>Importance (1-5)
+                            <select id="task-importance" required>
+                                <option value="" disabled selected>Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="modal-row">
+                        <label style="width:100%">Description<textarea id="task-desc" rows="4" placeholder="Optional"></textarea></label>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button id="addTaskSubmit" type="submit">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br><br>
+    <section id="routine-generator" class="routine-section">
+        <div class="routine-meta">
+            <h1 class="routine-heading">Weekly Routine Generator</h1>
+            <p><b>Note:</b> It is strongly recommended that you have at least 7-8 tasks to generate your routine.</p>
+        </div>
+
+        <div class="routine-card-container">
+            <div class="btn-group-wrapper">
+        </div>
+        </div>
+        <br><br>
+        <button id="generateRoutineBtn" class="rtn-gradient-btn">
+                    Generate Routine
+                </button>
+    </section>
+
+    <script type="module" src="/js/auth-guard.js"></script>
+    <script type="module" src="/js/navbar-auth.js"></script>
+    <script src="/js/main.js" defer></script>
+    <script type="module" src="/js/todo.js"></script>
+    <script type="module" src="/js/routine.js"></script>
+
+</body>
+</html>

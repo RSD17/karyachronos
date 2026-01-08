@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KaryaChronos (Kacy)</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/imgs/kacy-32x32.png" sizes="32x32" type="image/png">
+    <script src="https://kit.fontawesome.com/cad18a28f3.js" crossorigin="anonymous"></script>
+    <script type="module" src="/js/register.js"></script>
+</head>
+<body>
+    <header class="home-header">
+            <img id="home-logo" src="/imgs/kacy-logo.png" alt="Kacy Logo" width="100px">
+            <br>
+            <h1 id="home-heading">
+                <span class="heading-main" style="color: #5e2ee3;">KaryaChronos</span><br>
+                <span class="heading-accent" style="color: #eb6309">(Kacy)</span>
+            </h1>
+        </header>
+
+    <div class="container" id="container">
+        <!-- Sign Up Form -->
+        <div class="form-container sign-up-container">
+            <form class="form" id="signupForm">
+                <div id="signUpMsg" class="dispMessage" style="display: none;"></div>
+                <h1 class="heading-primary">Create Account</h1><br>
+                <input class="input" type="text" placeholder="Username" id="username" required>
+                <input class="input" type="email" placeholder="Email" id="rEmail" required>
+                <input class="input" type="password" placeholder="Password" id="rPassword" required><br>
+                <button class="btn" type="submit">Sign Up</button>
+                <p class="auth-switch">Already have an account? <a href="#" class="to-signin">Sign In</a></p>
+            </form>
+        </div>
+
+        <!-- Mobile OR separator -->
+        <div class="mobile-or" role="separator" aria-label="or separator" aria-hidden="true">OR</div>
+
+        <!-- Sign In Form -->
+        <div class="form-container sign-in-container">
+            <form class="form" id="signinForm">
+                <div id="signInMsg" class="dispMessage" style="display: none;"></div>
+                <h1 class="heading-primary">Sign In</h1><br>
+                <input class="input" type="email" placeholder="Email" id="lEmail" required>
+                <input class="input" type="password" placeholder="Password" id="lPassword" required><br>
+                <button class="btn" type="submit">Sign In</button>
+                <p class="auth-switch">Don't have an account? <a href="#" class="to-signup">Sign Up</a></p>
+            </form>
+        </div>
+
+        <!-- Overlay Panels -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1 class="heading-primary">Welcome Back, Fellow Peer!</h1>
+                    <button class="btn" type="button" id="showSignIn" style="margin-top: 30px;">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1 class="heading-primary">Don't Have an Account?!</h1>
+                    <button class="btn" type="button" id="showSignUp" style="margin-top: 30px;">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+    <script src="/js/register.js" type="module"></script>
+    <script src="/js/loginsignup.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/firebase.js" type="module"></script>
+</html>

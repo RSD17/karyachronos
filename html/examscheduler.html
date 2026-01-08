@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Prep Scheduler</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/imgs/kacy-32x32.png" sizes="32x32" type="image/png">
+    <script src="https://kit.fontawesome.com/cad18a28f3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="home-header">
+            <img id="home-logo" src="/imgs/kacy-logo.png" alt="Kacy Logo" width="100px">
+            <br>
+            <h1 id="home-heading">
+                <span class="heading-main" style="color: #5e2ee3;">KaryaChronos</span><br>
+                <span class="heading-accent" style="color: #eb6309">(Kacy)</span>
+            </h1>
+        </header>
+    <nav class="navbar">
+            <button class="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <a href="/html/dashboard.html">Dashboard</a>
+            <a href="/html/smarttodo.html">Smart To-Do List</a>
+            <a href="/html/smarttodo.html#routine-generator">Routine Generator</a>
+            <a href="/html/examscheduler.html"  class="active-nav-link">Exam Prep Scheduler</a>
+            <div class="nav-dropdown">
+                <button class="dropbtn"> Profile 
+                    <i class="fa-solid fa-circle-user" style="margin: 0 5px;"></i>
+
+                    <i class="fa fa-caret-down" style="margin-left: 4px;"></i>
+                </button>
+                <div class="nav-dropdown-content">
+                    <a href="#" data-signout style="color: red;">Sign Out</a>
+                </div>
+            </div> 
+        </nav>
+        <br>
+    <h1>Exam Prep Scheduler</h1>
+    <div class="exam-container">        
+        <div class="scheduler-grid">
+            <div class="subject-panel">
+                <button id="openSubjectModal" class="add-subject-header">
+                    <i class="fa-solid fa-circle-plus"></i> Add Subject
+                </button>
+                
+                <div id="subject-list-container" class="subject-list">
+                    </div>
+
+                <div class="exam-footer-input">
+                    <label>Time Left Until Exam (Days):</label>
+                    <input type="number" id="exam-days-left" placeholder="0">
+                </div>
+
+                <button id="generateScheduleBtn" class="exam-gradient-btn">Generate Schedule</button>
+            </div>
+
+            <div class="schedule-result-panel">
+                <h2>Your Schedule</h2>
+                <div class="schedule-output-card" id="schedule-output">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="subject-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Subject</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="subject-form">
+                <div class="modal-body">
+                    <div class="modal-row">
+                        <label>Subject Name<input type="text" id="sub-name" required></label>
+                    </div>
+                    <div class="modal-row">
+                        <label>Difficulty (1-5)
+                            <input type="range" id="sub-diff" min="1" max="5" value="3">
+                            <output id="diff-val">3</output>
+                        </label>
+                    </div>
+                    <div class="modal-row">
+                        <label>Estimated Study Duration (hrs)<input type="number" id="sub-duration" step="0.5" required></label>
+                    </div>
+                    <div class="modal-row">
+                        <label>Current Preparation (%)<input type="number" id="sub-prep" min="0" max="100" required></label>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" id="addSubSubmit">Add Subject</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/js/auth-guard.js"></script>
+    <script type="module" src="/js/navbar-auth.js"></script>
+    <script src="/js/main.js" defer></script>
+    <script type="module" src="/js/addsub.js"></script>
+    <script type="module" src="/js/examprep.js"></script>
+
+</body>
+</html>

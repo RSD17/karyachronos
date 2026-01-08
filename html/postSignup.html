@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Profile</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/imgs/kacy-32x32.png" sizes="32x32" type="image/png">
+    <!-- Post-signup styles moved to /css/style.css -->
+</head>
+<body>
+    <div class="post-signup-container">
+        <div class="post-signup-card">
+        <header class="home-header">
+            <img id="home-logo" src="/imgs/kacy-logo.png" alt="Kacy Logo">
+            <br>
+            <h1 id="home-heading">
+                <span class="heading-main">KaryaChronos</span><br>
+                <span class="heading-accent">(Kacy)</span>
+            </h1>
+        </header><br>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <br><br>
+        <h1>Complete Your Profile</h1>
+        <form id="postSignupForm">
+
+            <!-- Question 1 -->
+            <div class="question active" data-step="0">
+                <label>What is your current level of education?</label><br>
+                <select id="education" required>
+                    <option value="">Select</option>
+                    <option value="primary">Primary School (Grade 1-5 [US] / Year 2-6 [UK])</option>
+                    <option value="middle-school">Middle School (Grade 6-8 [US] / Year 7-9 [UK])</option>
+                    <option value="hs-freshman">High School Freshman (Grade 9 [US] / Year 10 [UK])</option>
+                    <option value="hs-sophomore">High School Sophomore (Grade 10 [US] / Year 11 [UK])</option>
+                    <option value="hs-junior">High School Junior (Grade 11 [US] / Year 12 [UK])</option>
+                    <option value="hs-senior">High School Senior (Grade 12 [US] / Year 13 [UK])</option>
+                    <option value="undergraduate">Undergraduate</option>
+                    <option value="postgraduate">Post-Graduate</option>
+                </select>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question" data-step="1">
+                <label>How many days in a week do you have school/college?</label><br>
+                <div class="slider-row">
+                    <input type="range" id="schoolDays" min="0" max="7" step="1" value="5" aria-valuemin="0" aria-valuemax="7" aria-valuenow="5" required>
+                    <output id="schoolDaysVal" for="schoolDays">5</output>
+                </div>
+                <small class="muted">Drag to choose from 0 (none) to 7 days</small>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question" data-step="2">
+                <label>What time do you usually wake up (weekdays)?</label><br>
+                <input type="time" id="wakeWeekdays" required>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question" data-step="3">
+                <label>What time do you usually wake up (weekends)?</label><br>
+                <input type="time" id="wakeWeekends" required>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question" data-step="4">
+                <label>What time do you usually go to bed (weekdays)?</label><br>
+                <input type="time" id="bedWeekdays" required>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question" data-step="5">
+                <label>What time do you usually go to bed (weekends)?</label><br>
+                <input type="time" id="bedWeekends" required>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question" data-step="6">
+                <label>What are your school/college timings (inclusive of commute time)?</label><br>
+                <p><strong>Sample:</strong> 06:00-15:30</p>
+                <input type="text" id="schoolTimings" placeholder="e.g., 06:00-15:30" required>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question" data-step="7">
+                <label>What time of the day are you most productive/energetic?</label><br>
+                <select id="productiveTime" required>
+                    <option value="">Select</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
+                    <option value="Night">Night</option>
+                </select>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question" data-step="8">
+                <label>How many hours can you realistically study in a day (aside from school/college)?</label><br>
+                <input type="number" id="studyHours" min="0" max="24" required>
+            </div>
+            <!-- Navigation Buttons -->
+            <div class="wizard-buttons">
+                <button type="button" id="prevBtn" disabled>Back</button>
+                <button type="button" id="nextBtn">Next</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</body>
+    <script type="module" src="/js/postSignup.js"></script>
+    <script src="/js/main.js"></script>
+</html>

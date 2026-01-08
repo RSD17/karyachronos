@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="icon" href="/imgs/kacy-32x32.png" sizes="32x32" type="image/png">
+        <script src="https://kit.fontawesome.com/cad18a28f3.js" crossorigin="anonymous"></script>
+        <script type="module" src="/js/register.js"></script>
+    </head>
+    <body>
+        <header class="home-header">
+            <img id="home-logo" src="/imgs/kacy-logo.png" alt="Kacy Logo" width="100px">
+            <br>
+            <h1 id="home-heading">
+                <span class="heading-main" style="color: #5e2ee3;">KaryaChronos</span><br>
+                <span class="heading-accent" style="color: #eb6309">(Kacy)</span>
+            </h1>
+        </header>
+        <nav class="navbar">
+                <button class="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+                <a href="/html/dashboard.html" class="active-nav-link">Dashboard</a>
+                <a href="/html/smarttodo.html">Smart To-Do List</a>
+                <a href="/html/smarttodo.html#routine-generator">Routine Generator</a>
+                <a href="/html/examscheduler.html">Exam Prep Scheduler</a>
+                <div class="nav-dropdown">
+                    <button class="dropbtn"> Profile 
+                        <i class="fa-solid fa-circle-user" style="margin: 0 5px;"></i>
+
+                        <i class="fa fa-caret-down" style="margin-left: 4px;"></i>
+                    </button>
+                    <div class="nav-dropdown-content">
+                        <a href="#" id="signOutBtn" style="color: red;">Sign Out</a>
+                    </div>
+                </div> 
+            </nav>
+        <br><h1>Welcome! <span id="dash-username" style="font-weight: normal;"></span></h1>
+        <div class="dashboard cont">
+            <h1>Your Dashboard</h1><br>
+            <div class="cards-grid">
+                <article class="dash-card">
+                    <div>
+                        <h2>Smart To-Do List</h2>
+                        <p class="desc">An intelligent task list that prioritizes what matters most, so nothing important slips through</p>
+                    </div>
+                    <div>
+                        <hr>
+                        <a class="try-link" href="/html/smarttodo.html">Try it out <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="dash-card">
+                    <div>
+                        <h2>Exam Prep Scheduler</h2>
+                        <p class="desc">A strategic study planner that breaks exam preparation into manageable, stress-free milestones</p>
+                    </div>
+                    <div>
+                        <hr>
+                        <a class="try-link" href="/html/examscheduler.html">Try it out <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="dash-card">
+                    <div>
+                        <h2>Routine Generator</h2>
+                        <p class="desc">Personalized daily routines that adapt to your workload, deadlines, and preferred working hours</p>
+                    </div>
+                    <div>
+                        <hr>
+                        <a class="try-link" href="/html/smarttodo.html#routine-generator">Try it out <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <script src="/js/register.js" type="module"></script>
+        <script src="/js/loginsignup.js" defer></script>
+        <script src="/js/main.js" defer></script>
+        <script type="module" src="/js/dashboard.js"></script>
+        <script type="module" src="/js/firebase.js"></script>
+        <script type="module" src="/js/auth-guard.js"></script>
+        <script type="module" src="/js/user-service.js"></script>
+    </body>
+</html>
