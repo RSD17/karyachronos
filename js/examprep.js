@@ -122,6 +122,11 @@ ${subjects.map(s => `
         resetGenerateButton();
         return;
         }
+      if (daysLeft < 6) {
+        renderMessage("Not enough time until the exam! Focus on cramming key concepts and practicing as much as possible.");
+        resetGenerateButton();
+        return; // Skip the rest of the AI logic
+      }
 
 
       const snap = await getDocs(
