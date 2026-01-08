@@ -19,7 +19,7 @@ if (signOutBtn) {
       e.preventDefault();
       try {
           await signOut(auth);
-          window.location.href = "/html/index.html";
+          window.location.href = "/html/loginsignup.html";
       } catch (error) {
           console.error("Error signing out:", error);
       }

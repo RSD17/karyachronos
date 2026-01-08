@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       await signOut(auth);
-      window.location.href = "/html/index.html";
+      window.location.href = "/html/loginsignup.html";
     } catch (err) {
       console.error("Sign out failed:", err);
       alert("Sign out failed. Please try again.");
